@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Профиль {% endblock %}
+
+{% block content %}
+    <h1>Ваш профиль: {{ user.username }}</h1>
+    <h3>Ваши курсы:</h3>
+    {% for item in progress %}
+        <p>{{ item.lesson.title }} - {% if item.completed %}Пройдено{% else %}В процессе{% endif %}</p>
+    {% endfor %}
+{% endblock %}
